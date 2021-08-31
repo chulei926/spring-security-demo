@@ -30,3 +30,6 @@ target/
 .idea
 *.iml
 /ss-demo1/src/main/resources/rebel.xml
+
+**/overlays/*
+/sso-server/overlays
