@@ -3,8 +3,8 @@
 
 # 测试地址
 ```html
-https://leichu.com:8443/sso/login?service=http://app1.com/app1
-https://leichu.com:8443/sso/login?service=http://app2.com/app2
+https://leichu.com:8443/sso/login?service=http://app1.com:8080/app1
+https://leichu.com:8443/sso/login?service=http://app2.com:8080/app2
 ```
 
 
