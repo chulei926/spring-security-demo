@@ -105,6 +105,7 @@
                             <excludes>
                                 <exclude>WEB-INF/classes/services/*</exclude>
                                 <exclude>WEB-INF/classes/application/*</exclude>
+                                <exclude>**/messages_*.properties</exclude>
                             </excludes>
                         </overlay>
                     </overlays>

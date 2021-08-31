@@ -1,5 +1,6 @@
 package com.leichu.cas.config;
 
+import com.leichu.cas.config.exception.MyAccountNotFoundException;
 import com.leichu.cas.model.User;
 import com.leichu.cas.service.UserService;
 import lombok.extern.log4j.Log4j2;
@@ -35,7 +36,7 @@ public class MyAuthenticationHandler extends AbstractUsernamePasswordAuthenticat
 		final UserService userService = SpringContextHolder.getBean(UserService.class);
 		final User user = userService.login(username, password);
 		if (null == user) {
-			throw new AccountException("抱歉，用户名或密码错误！");
+			throw new MyAccountNotFoundException("抱歉，用户名或密码错误！");
 		}
 
 		final List<MessageDescriptor> list = new ArrayList<>();
