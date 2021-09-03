@@ -14,9 +14,7 @@ import org.apereo.cas.services.ServicesManager;
 
 import javax.security.auth.login.AccountException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Log4j2
 public class MyAuthenticationHandler extends AbstractUsernamePasswordAuthenticationHandler {
@@ -40,7 +38,11 @@ public class MyAuthenticationHandler extends AbstractUsernamePasswordAuthenticat
 		}
 
 		final List<MessageDescriptor> list = new ArrayList<>();
-		return createHandlerResult(credential, this.principalFactory.createPrincipal(username, Collections.emptyMap()), list);
+		Map<String, Object> map = new HashMap<>();
+		map.put("uid", user.getId());
+		map.put("name", user.getUsername());
+		map.put("who", "张三");
+		return createHandlerResult(credential, this.principalFactory.createPrincipal(username, map), list);
 	}
 
 }

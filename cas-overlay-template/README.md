@@ -1,10 +1,16 @@
-# 自定义登录逻辑
+# CAS 实现 SSO 单点登录
+1. cas 服务端搭建
+2. cas 服务端自定义主题，实现不同的应用不同的登录页
+3. cas 服务端自定义登录逻辑，实现从数据库查询用户进行认证
+4. cas 客户端集成登录、登出
+5. cas 客户端获取用户信息
+6. cas 服务端集群部署，session 共享
 
 
 # 测试地址
 ```html
-https://leichu.com:8443/sso/login?service=http://app1.com:8080/app1
-https://leichu.com:8443/sso/login?service=http://app2.com:8080/app2
+https://leichu.com:8443/sso/login?service=http://app1.leichu.com:8080/app1/index
+https://leichu.com:8443/sso/login?service=http://app2.leichu.com:8080/app2/index
 ```
 
 

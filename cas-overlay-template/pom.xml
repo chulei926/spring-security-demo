@@ -54,6 +54,14 @@
             <artifactId>cas-server-support-generic</artifactId>
             <version>${cas.version}</version>
         </dependency>
+
+        <!-- Authentication Attributes -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-core-authentication-attributes</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

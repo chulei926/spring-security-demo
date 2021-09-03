@@ -5,5 +5,8 @@
   "id" : 1001,
   "description" : "这是app2的客户端",
   "evaluationOrder" : 11,
-  "theme" : "app2"
+  "theme" : "app2",
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  }
 }
