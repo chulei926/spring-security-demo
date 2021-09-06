@@ -35,6 +35,20 @@
             <version>${cas.version}</version>
         </dependency>
 
+        <!-- Ticket的持久化 -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-redis-ticket-registry</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!-- Session的持久化 -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp-session-redis</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
+
         <!-- Custom Authentication -->
         <dependency>
             <groupId>org.apereo.cas</groupId>
@@ -71,10 +85,6 @@
                 <groupId>com.rimerosolutions.maven.plugins</groupId>
                 <artifactId>wrapper-maven-plugin</artifactId>
                 <version>0.0.5</version>
-<!--                <configuration>-->
-<!--                    <verifyDownload>true</verifyDownload>-->
-<!--                    <checksumAlgorithm>MD5</checksumAlgorithm>-->
-<!--                </configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

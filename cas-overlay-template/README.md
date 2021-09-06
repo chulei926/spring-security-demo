@@ -9,8 +9,8 @@
 
 # 测试地址
 ```html
-https://leichu.com:8443/sso/login?service=http://app1.leichu.com:8080/app1/index
-https://leichu.com:8443/sso/login?service=http://app2.leichu.com:8080/app2/index
+https://app1.leichu.top/app1/index
+https://app2.leichu.top/app2/index
 ```
 
 
