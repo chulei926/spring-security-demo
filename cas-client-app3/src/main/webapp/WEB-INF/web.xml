@@ -49,6 +49,31 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<filter>
+		<filter-name>corsFilter</filter-name>
+		<filter-class>com.leichu.common.filters.CorsFilter</filter-class>
+		<init-param>
+			<param-name>allowOrigin</param-name>
+			<param-value>http://localhost:4200</param-value>
+		</init-param>
+		<init-param>
+			<param-name>allowMethods</param-name>
+			<param-value>GET,POST,PUT,DELETE,OPTIONS</param-value>
+		</init-param>
+		<init-param>
+			<param-name>allowCredentials</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>allowHeaders</param-name>
+			<param-value>x-requested-with,origin,content-type,accept,jwt,uid</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>corsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 
 	<!-- ======================== 单点登录开始 ======================== -->
 	<!-- 用于单点退出，该过滤器用于实现单点登出功能，可选配置 -->
@@ -82,7 +107,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CASFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/api</url-pattern>
 	</filter-mapping>
 
 	<!-- 该过滤器负责对Ticket的校验工作，必须启用它 -->
@@ -100,7 +125,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CAS Validation Filter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/api</url-pattern>
 	</filter-mapping>
 
 	<!-- 该过滤器负责实现HttpServletRequest请求的包裹， 比如允许开发者通过HttpServletRequest的getRemoteUser()方法获得SSO登录用户的登录名，可选配置。 -->
@@ -110,7 +135,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/api</url-pattern>
 	</filter-mapping>
 
 	<!-- 该过滤器使得开发者可以通过org.jasig.cas.client.util.AssertionHolder来获取用户的登录名。 比如AssertionHolder.getAssertion().getPrincipal().getName()。 -->
@@ -120,7 +145,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>CAS Assertion Thread Local Filter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/api</url-pattern>
 	</filter-mapping>
 
 	<!-- ======================== 单点登录结束 ======================== -->

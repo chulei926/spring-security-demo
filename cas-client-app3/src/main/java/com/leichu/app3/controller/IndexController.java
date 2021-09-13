@@ -11,7 +11,7 @@ import java.util.Map;
 @Controller
 public class IndexController {
 
-	@RequestMapping("index")
+	@RequestMapping("api/index")
 	public String index(Model model) {
 		AttributePrincipal principal = AssertionHolder.getAssertion().getPrincipal();
 		System.out.println("APP3获取服务端用户信息：" + principal.getAttributes());

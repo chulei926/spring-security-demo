@@ -33,3 +33,4 @@ target/
 
 **/overlays/*
 /sso-server/overlays
+**/.vscode

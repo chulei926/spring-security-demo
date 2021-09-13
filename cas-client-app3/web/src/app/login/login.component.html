@@ -1,0 +1,20 @@
+<div class="bg-box">
+
+	<div class="login-form">
+		<div class="title">SSO认证中心</div>
+		<div class="form">
+			<div class="item">
+				<nz-input-group nzPrefixIcon="user" [nzSize]="'large'">
+					<input type="text" nz-input placeholder="请输入用户名" [(ngModel)]="username" nzSize="large" (keyup.enter)="login()" autocomplete='new-password'/>
+				</nz-input-group>
+			</div>
+			<div class="item">
+				<nz-input-group nzPrefixIcon="lock" [nzSize]="'large'">
+					<input type="password" nz-input placeholder="请输入密码" [(ngModel)]="password" nzSize="large" (keyup.enter)="login()" autocomplete='new-password'/>
+				</nz-input-group>
+			</div>
+			<button nz-button nzBlock class="submit" [nzType]="'dashed'" [nzSize]="'large'" (click)="login()" [nzLoading]="loading">登录</button>
+		</div>
+	</div>
+
+</div>
