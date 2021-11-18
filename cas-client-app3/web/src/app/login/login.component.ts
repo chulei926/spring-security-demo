@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../service/auth.service";
 import {GlobalService} from "../service/global.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'cas-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     password: string = null;
     loading: boolean = false;
 
-    constructor(private authService: AuthService, private gs: GlobalService) {
+    constructor(private authService: AuthService, private gs: GlobalService, private router: Router) {
     }
 
     ngOnInit(): void {
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
         }
         this.loading = true;
         this.authService.login(this.username, this.password).then(res => {
-            this.gs.success('success', '登录成功')
+            this.gs.success('success', '登录成功');
+	        this.router.navigateByUrl('/index/index');
         }).catch(error => {
             this.gs.error("error", `${error.result}`);
         }).finally(() => {

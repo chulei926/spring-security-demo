@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 
@@ -15,9 +17,11 @@ public class LoginController {
 
 	@RequestMapping("login")
 	@ResponseBody
-	public JsonResult<JSONObject> login(String username, String password) {
+	public JsonResult<JSONObject> login(HttpSession session, String username, String password) {
 		if (name.equals(username) && pwd.equals(password)) {
-			return JsonResult.getSuccessResult(new JSONObject().fluentPut("acc", name).fluentPut("pwd", pwd));
+			final JSONObject res = new JSONObject().fluentPut("acc", name).fluentPut("pwd", pwd);
+			session.setAttribute("curUser", res);
+			return JsonResult.getSuccessResult(res);
 		}
 		throw new AuthenticationException("用户名或密码错误");
 	}

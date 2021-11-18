@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {GlobalService} from "../service/global.service";
 import {NzModalModule} from "ng-zorro-antd/modal";
+import {NgxLoadingModule} from "ngx-loading";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {NzModalModule} from "ng-zorro-antd/modal";
 		NzIconModule,
 		NzInputModule,
 		NzModalModule,
+		NgxLoadingModule,
 	],
 	providers: [GlobalService],
 	exports: [
